@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './Provider/AuthProvider';
+import Swal from 'sweetalert2'
 
 const Login = () => {
 
@@ -18,12 +19,23 @@ const Login = () => {
             .then(res => {
                 const user = res.user
                 setUser(user)
+                
+                Swal.fire({
+                    title: "Congrates",
+                    text: "login successful",
+                    icon: "success"
+                  });
                 console.log(user)
 
             })
             .catch(err => {
            console.log(err.message)
-
+        
+        Swal.fire({
+            title: "The Internet?",
+            text: "That thing is still around?",
+            icon: "error"
+          });
 
         })
 
@@ -34,6 +46,11 @@ const Login = () => {
         googleLogin()
         .then(res=>{
             console.log(res)
+            Swal.fire({
+                title: "Great",
+                text: "Google login successful",
+                icon: "success"
+              });
         })
     }
     return (

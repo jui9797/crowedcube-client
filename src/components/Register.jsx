@@ -3,41 +3,68 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from './Provider/AuthProvider';
 import auth from './Firebase/firebase.config';
 import { updateProfile } from "firebase/auth";
+import Swal from 'sweetalert2'
 
 const Register = () => {
 
-    const {createNewUser, setUser} =useContext(AuthContext)
+    const { createNewUser, setUser } = useContext(AuthContext)
 
-    const handleRegister=e=>{
+    const handleRegister = e => {
         e.preventDefault()
-        const form =e.target
-        const name =form.name.value
-        const email =form.email.value
-        const photo =form.photo.value
-        const password =form.password.value
-        const newUser ={name, email, photo, password}
+        const form = e.target
+        const name = form.name.value
+        const email = form.email.value
+        const photo = form.photo.value
+        const password = form.password.value
+        const newUser = { name, email, photo, password }
         console.log(newUser)
 
+        const regexPass =/^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+        if(!regexPass.test(password)){
+            Swal.fire({
+                title: "Opps.....!",
+                text: "invalid password",
+                icon: "error"
+              });
+          return;
+        }
+
+
         createNewUser(email, password)
-        .then(result =>{
-            const user =result.user
-            console.log(user)
-            updateProfile(auth.currentUser, {displayName:name, photoURL:photo})
-        .then(()=>{
-          
-          setUser({...auth.currentUser, displayName:name, photoURL:photo})
-          
-        })
-        .catch(err =>{
-          console.log(err.message)
-          
-        })
-        })
-        .catch((error) => {
-            
-            const errorMessage = error.message;
-            console.log(errorMessage)
-          });
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                updateProfile(auth.currentUser, { displayName: name, photoURL: photo })
+                    .then(() => {
+
+                        setUser({ ...auth.currentUser, displayName: name, photoURL: photo })
+                        Swal.fire({
+                            title: "Congrates",
+                            text: "Register successful",
+                            icon: "success"
+                          });
+
+                    })
+                    .catch((err) => {
+                        console.log(err.message);
+                        Swal.fire({
+                          title: 'Oops..!',
+                          text: err.message,
+                          icon: 'error',
+                          confirmButtonText: 'OK',
+                        });
+                      });
+            })
+            .catch((error) => {
+
+                const errorMessage = error.message;
+                Swal.fire({
+                    title: "Opps...!",
+                    text: errorMessage,
+                    icon: "error"
+                  });
+                console.log(errorMessage)
+            });
     }
 
     return (

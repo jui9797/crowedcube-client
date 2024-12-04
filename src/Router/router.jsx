@@ -9,6 +9,7 @@ import MyDonation from "../Pages/MyDonation";
 import Register from "../components/Register";
 import Login from "../components/Login";
 import PrivateRoute from "./PrivateRoute";
+import Details from "../components/Details";
 
 const router = createBrowserRouter([
     {
@@ -18,11 +19,18 @@ const router = createBrowserRouter([
       children:[
         {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:()=> fetch('http://localhost:5000/newcamp6')
         },
         {
             path:'/allCamp',
-            element:<AllCamp></AllCamp>
+            element:<AllCamp></AllCamp>,
+            loader: ()=> fetch('http://localhost:5000/newcamp')
+        },
+        {
+            path:'/newcamp/:id',
+            element:<PrivateRoute><Details></Details></PrivateRoute>,
+            loader:({params})=> fetch(`http://localhost:5000/newcamp/${params.id}`)
         },
         {
             path:'/newCamp',
