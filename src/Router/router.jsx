@@ -4,12 +4,15 @@ import Error from "../components/Error";
 import Home from "../Pages/Home";
 import AllCamp from "../Pages/AllCamp";
 import NewCamp from "../Pages/NewCamp";
-import MyCamp from "../Pages/MyCamp";
-import MyDonation from "../Pages/MyDonation";
+import MyCamp from "../Pages/MyDonations";
+import MyDonation from "../Pages/MyCampaign";
 import Register from "../components/Register";
 import Login from "../components/Login";
 import PrivateRoute from "./PrivateRoute";
 import Details from "../components/Details";
+import UpdateCamp from "../components/UpdateCamp";
+import MyDonations from "../Pages/MyDonations";
+import MyCampaign from "../Pages/MyCampaign";
 
 const router = createBrowserRouter([
     {
@@ -38,14 +41,20 @@ const router = createBrowserRouter([
         },
         
         {
-            path:'/myCamp/:email',
-            element:<PrivateRoute><MyCamp></MyCamp></PrivateRoute>,
+            path:'/myDonation/:email',
+            element:<PrivateRoute><MyDonations></MyDonations></PrivateRoute>,
             loader:({params})=> fetch(`http://localhost:5000/allDonation/${params.email}`)
             
         },
         {
-            path:'/myDonation',
-            element:<PrivateRoute><MyDonation></MyDonation></PrivateRoute>
+            path:'/updateCampaign/:id',
+            element:<UpdateCamp></UpdateCamp>,
+            loader:({params})=> fetch(`http://localhost:5000/updateData/${params.id}`)
+        },
+        {
+            path:'/myCamp/:email',
+            element:<PrivateRoute><MyCampaign></MyCampaign></PrivateRoute>,
+            loader:({params})=> fetch(`http://localhost:5000/myCampaign/${params.email}`)
         },
         {
             path:'/login',

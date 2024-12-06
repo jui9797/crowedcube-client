@@ -12,7 +12,8 @@ const Navbar = () => {
         <NavLink to="/allCamp" className={({ isActive }) => isActive ? "text-[#023047] bg-white hover:text-[#023047] hover:bg-white py-2 px-4 text-center rounded" : "text-white py-2 px-4 text-center rounded"}>All Campaign</NavLink>
         <NavLink to="/newCamp" className={({ isActive }) => isActive ? "text-[#023047] bg-white hover:text-[#023047] hover:bg-white py-2 px-4 text-center rounded" : "text-white py-2 px-4 text-center rounded"}>Add New Campaign</NavLink>
         <NavLink to={`/myCamp/${user?.email}`} className={({ isActive }) => isActive ? "text-[#023047] bg-white hover:text-[#023047] hover:bg-white py-2 px-4 text-center rounded" : "text-white py-2 px-4 text-center rounded"}>My Campaign</NavLink>
-        <NavLink to="/myDonation" className={({ isActive }) => isActive ? "text-[#023047] bg-white hover:text-[#023047] hover:bg-white py-2 px-4 text-center rounded" : "text-white py-2 px-4 text-center rounded"}>My Donation</NavLink>
+        <NavLink to={`/myDonation/${user?.email}`} className={({ isActive }) => isActive ? "text-[#023047] bg-white hover:text-[#023047] hover:bg-white py-2 px-4 text-center rounded" : "text-white py-2 px-4 text-center rounded"}>My Donation</NavLink>
+        
     </>
 
     return (

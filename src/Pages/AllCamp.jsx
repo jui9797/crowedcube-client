@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import CampCard from '../components/CampCard';
+// import CampCard from '../components/CampCard';
 
 const AllCamp = () => {
   const allCampData = useLoaderData()
