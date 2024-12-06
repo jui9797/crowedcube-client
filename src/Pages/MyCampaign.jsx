@@ -1,14 +1,45 @@
 
+import { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 
 const MyCampaign = () => {
    const loadedData =useLoaderData() 
+    const [campData, setCampData] =useState(loadedData)
 
-
-   const handleDelete=(id)=>{
-   console.log(id)
+   const handleDelete=(_id)=>{
+   
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`http://localhost:5000/allCamp/${_id}`,{
+                method:'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                
+                if(data.deletedCount>0){
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                      });
+                }
+                const remaining =campData.filter(camp=>camp._id !== _id)
+                setCampData(remaining)
+            })
+          
+        }
+      });
    }
   
     
@@ -31,7 +62,7 @@ const MyCampaign = () => {
             <tbody>
               {/* row 1 */}
               {
-                loadedData.map((data, index)=>
+                campData.map((data, index)=>
                   <tr key={data._id} className='border-b-2 border-pink-900'>
                 <th>{index+1}</th>
                 <td>{data.title}</td>
