@@ -9,9 +9,11 @@ import { SiMoneygram } from "react-icons/si";
 import { PiHandWithdrawFill } from "react-icons/pi";
 import Marquee from 'react-fast-marquee';
 
-const WhyCrowed = () => {
+const WhyCrowed = ({isDarkTheme}) => {
     return (
-        <div className='my-10 bg-blue-200  w-full'>
+        <div  className={`my-10 bg-blue-200  w-full p-6 rounded-lg shadow-md ${
+            isDarkTheme ? 'bg-gray-900 text-purple-700' : 'bg-gray-100 text-gray-900'
+          }`}>
             <p className='text-center font-bold font-inter'><small>Services</small></p>
             <h2 className='text-3xl lg:text-4xl text-center mb-8 font-bold font-rubik'>Why CrowdCube?</h2>
             <Marquee gradient={false} pauseOnHover={true} speed={50}>

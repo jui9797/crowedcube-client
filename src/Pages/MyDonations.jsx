@@ -14,7 +14,7 @@ const MyDonations = () => {
     return (
         <div>
       <h1 className='text-xl md:text-2xl lg:text-3xl font-bold text-center my-4'>My Donation</h1>
-      <div className='grid grid-cols-1 md:grid-cols-2'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-6 p-10'>
         {
             loadedData.map(data=><CampCard key={data._id} data={data}></CampCard>)
         }

@@ -3,18 +3,24 @@ import joinimg from '../assets/joining1.jpg.webp';
 import { FaLongArrowAltRight } from "react-icons/fa";
 import 'animate.css';
 
-const Join = () => {
+const Join = ({isDarkTheme}) => {
     return (
-        <div className="w-11/12 mx-auto flex flex-col lg:flex-row gap-8">
+        <div className={`w-11/12 mx-auto flex flex-col lg:flex-row gap-8 `}>
             <div className="lg:w-1/2">
-                <p className="text-green-800 font-bold mb-4 flex justify-start items-center gap-2">
+                <p className={`text-green-800 font-bold mb-4 flex justify-start items-center gap-2 ${
+            isDarkTheme ? ' text-white' : ''
+          }`}>
                     <small>Join To Us</small>
                     <FaLongArrowAltRight />
                 </p>
-                <h2 className="text-3xl lg:text-5xl mb-4 font-bold text-[#023047] animate__animated animate__bounce">
+                <h2 className={`text-3xl lg:text-5xl mb-4 font-bold text-[#023047] animate__animated animate__bounce ${
+            isDarkTheme ? ' text-white' : ''
+          }`}>
                     Not Donate Yet?
                 </h2>
-                <p className="text-green-950 mb-4">
+                <p className={`text-green-950 mb-4 ${
+            isDarkTheme ? ' text-white' : ''
+          }`}>
                     Become a part of our mission to make a difference! By joining us, you,ll contribute to impactful campaigns and help create lasting change. Together, we can achieve more—whether by supporting a cause, volunteering your time, or spreading awareness. Let,s unite and build a brighter future for everyone!
                 </p>
                 <div>

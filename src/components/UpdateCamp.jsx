@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { AuthContext } from './Provider/AuthProvider';
-import { useLoaderData } from 'react-router-dom';
+// import { useLoaderData } from 'react-router-dom';
 
 const UpdateCamp = () => {
 const {user} =useContext(AuthContext)
-const updateData =useLoaderData()
-const {_id}=updateData
-console.log(updateData)
+// const updateData =useLoaderData()
+// const {_id}=updateData
+// console.log(updateData)
 
 const handleUpdate=e=>{
     e.preventDefault()
@@ -20,7 +20,7 @@ const handleUpdate=e=>{
     const userEmail=form.userEmail.value
     const userName=form.userName.value
     
-    const updatedCamp ={_id,image, title, type, description, minDonation, deadline, userEmail, userName}
+    const updatedCamp ={image, title, type, description, minDonation, deadline, userEmail, userName}
     console.log(updatedCamp)
 
     // fetch(`http://localhost:5000/updateData/${_id}`, {
@@ -49,7 +49,7 @@ const handleUpdate=e=>{
                 type="url"
                 id="image"
                 name="image"
-                defaultValue={updateData?.image}
+                // defaultValue={updateData?.image}
                 required
                 placeholder="Enter image URL"
                 className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -63,7 +63,7 @@ const handleUpdate=e=>{
                 type="text"
                 id="title"
                 name="title"
-                defaultValue={updateData?.title}
+                // defaultValue={updateData?.title}
                 required
                 placeholder="Enter campaign title"
                 className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -76,7 +76,7 @@ const handleUpdate=e=>{
               <select
                 id="type"
                 name="type"
-                defaultValue={updateData?.type}
+                // defaultValue={updateData?.type}
                 required
                 className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
@@ -93,7 +93,7 @@ const handleUpdate=e=>{
               <textarea
                 id="description"
                 name="description"
-                defaultValue={updateData?.description}
+                // defaultValue={updateData?.description}
                 required
                 rows="4"
                 placeholder="Enter campaign description"
@@ -108,7 +108,7 @@ const handleUpdate=e=>{
                 type="number"
                 id="minDonation"
                 name="minDonation"
-                defaultValue={updateData?.minDonation}
+                // defaultValue={updateData?.minDonation}
                 required
                 placeholder="Enter minimum donation amount"
                 className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -122,7 +122,7 @@ const handleUpdate=e=>{
                 type="date"
                 id="deadline"
                 name="deadline"
-                defaultValue={updateData?.deadline}
+                // defaultValue={updateData?.deadline}
                 required
                 className="w-full mt-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               />

@@ -4,7 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import Aos from 'aos';
 import 'aos/dist/aos.css'; 
 
-const CampCard = ({ data }) => {
+const CampCard = ({ data , isDarkTheme }) => {
 
 
     useEffect(() => {
@@ -14,8 +14,10 @@ const CampCard = ({ data }) => {
     const formattedDate = currentDate.toISOString().split('T')[0];
 
     return (
-        
-        <div className="h-auto  bg-blue-200 p-4 lg:p-6">
+        <div className={` ${
+            isDarkTheme ? 'bg-gray-800 text-purple-700' : 'bg-gray-100 text-gray-900'
+          }`}>
+        <div className="h-full  bg-blue-200 p-4 lg:p-6">
             <div data-aos="zoom-out" className="card lg:card-side shadow-xl flex flex-col lg:flex-row h-full rounded bg-white">
                 <figure className="w-full lg:w-1/2 h-[200px] lg:h-full">
                     <img
@@ -42,6 +44,7 @@ const CampCard = ({ data }) => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

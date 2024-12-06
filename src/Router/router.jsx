@@ -47,9 +47,10 @@ const router = createBrowserRouter([
             
         },
         {
-            path:'/updateCampaign/:id',
-            element:<UpdateCamp></UpdateCamp>,
-            loader:({params})=> fetch(`http://localhost:5000/updateData/${params.id}`)
+            path:'/updateCampaign',
+            element:<PrivateRoute><UpdateCamp></UpdateCamp></PrivateRoute>,
+            // loader:({params})=> fetch(`http://localhost:5000/allCamp/${params.id}`)
+            
         },
         {
             path:'/myCamp/:email',
