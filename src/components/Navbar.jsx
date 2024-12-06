@@ -6,20 +6,20 @@ import { AuthContext } from "./Provider/AuthProvider";
 const Navbar = () => {
     // const [isHovered, setIsHovered] = useState(false);
     const { user, logOut ,loading} = useContext(AuthContext)
-
+    
     const links = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/allCamp">All Campaign</NavLink></li>
-        <li><NavLink to="/newCamp">Add New Campaign</NavLink></li>
-        <li><NavLink to="/myCamp">My Campaign</NavLink></li>
-        <li><NavLink to="/myDonation">My Donation</NavLink></li>
+        <NavLink to="/" className={({ isActive }) => isActive ? "text-[#023047] bg-white hover:text-[#023047] hover:bg-white py-2 px-4 text-center rounded" : "text-white py-2 px-4 text-center rounded"}>Home</NavLink>
+        <NavLink to="/allCamp" className={({ isActive }) => isActive ? "text-[#023047] bg-white hover:text-[#023047] hover:bg-white py-2 px-4 text-center rounded" : "text-white py-2 px-4 text-center rounded"}>All Campaign</NavLink>
+        <NavLink to="/newCamp" className={({ isActive }) => isActive ? "text-[#023047] bg-white hover:text-[#023047] hover:bg-white py-2 px-4 text-center rounded" : "text-white py-2 px-4 text-center rounded"}>Add New Campaign</NavLink>
+        <NavLink to={`/myCamp/${user?.email}`} className={({ isActive }) => isActive ? "text-[#023047] bg-white hover:text-[#023047] hover:bg-white py-2 px-4 text-center rounded" : "text-white py-2 px-4 text-center rounded"}>My Campaign</NavLink>
+        <NavLink to="/myDonation" className={({ isActive }) => isActive ? "text-[#023047] bg-white hover:text-[#023047] hover:bg-white py-2 px-4 text-center rounded" : "text-white py-2 px-4 text-center rounded"}>My Donation</NavLink>
     </>
 
     return (
-        <div className="w-11/12 mx-auto">
-            <div className="navbar bg-base-100">
+        <div className="w-11/12 mx-auto bg-[#023047] text-white">
+            <div className="navbar ">
                 <div className="navbar-start">
-                    <div className="dropdown">
+                    <div className="dropdown ">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -36,14 +36,14 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-[#023047] rounded-box z-[1] mt-3 w-52 p-2 shadow items-center gap-4">
                             {links}
                         </ul>
                     </div>
                     <a className="btn btn-ghost text-xl">Crowdcube</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 items-center gap-4">
                         {links}
                     </ul>
                 </div>
@@ -57,7 +57,7 @@ const Navbar = () => {
                             <div className="relative inline-block group">
                                 {/* User Image */}
                                 <img
-                                    className="w-16 h-16 rounded-full object-cover"
+                                    className="w-16 h-16 rounded-full object-cover border-2"
                                     src={user?.photoURL || 'default-avatar-url.jpg'}
                                     alt="user photo"
                                 />
@@ -67,7 +67,7 @@ const Navbar = () => {
                                     <p className="text-center text-gray-800 font-medium">{user?.displayName || 'User'}</p>
                                     <button
                                         onClick={logOut}
-                                        className="w-full bg-red-500 text-white text-sm py-2 rounded hover:bg-red-600"
+                                        className="w-full bg-[#023047] text-white text-sm py-2 rounded "
                                     >
                                         Logout
                                     </button>

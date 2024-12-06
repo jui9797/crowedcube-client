@@ -27,7 +27,7 @@ const AllCamp = () => {
                 <th>{index+1}</th>
                 <td>{data.title}</td>
                 <td>{data.deadline}</td>
-                <td><Link to={`/newcamp/${data?._id}`}><button className='btn btn-success'>Detail</button></Link></td>
+                <td><Link to={`/${data?._id}`}><button className='btn btn-success'>See More</button></Link></td>
               </tr>
                 )
               }

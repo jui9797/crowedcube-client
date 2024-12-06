@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './Provider/AuthProvider';
 import Swal from 'sweetalert2'
 
 const Login = () => {
+    const location =useLocation()
+    const navigate =useNavigate()
 
     const { userlogin,setUser, googleLogin } = useContext(AuthContext)
 
@@ -25,6 +27,7 @@ const Login = () => {
                     text: "login successful",
                     icon: "success"
                   });
+                  navigate(location?.state? location.state:'/')
                 console.log(user)
 
             })
@@ -51,6 +54,7 @@ const Login = () => {
                 text: "Google login successful",
                 icon: "success"
               });
+              navigate(location?.state? location.state:'/')
         })
     }
     return (

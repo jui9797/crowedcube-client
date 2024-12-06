@@ -28,17 +28,20 @@ const router = createBrowserRouter([
             loader: ()=> fetch('http://localhost:5000/newcamp')
         },
         {
-            path:'/newcamp/:id',
+            path:'/:id',
             element:<PrivateRoute><Details></Details></PrivateRoute>,
-            loader:({params})=> fetch(`http://localhost:5000/newcamp/${params.id}`)
+            loader:({params})=> fetch(`http://localhost:5000/allCamp/${params.id}`)
         },
         {
             path:'/newCamp',
             element:<PrivateRoute><NewCamp></NewCamp></PrivateRoute>
         },
+        
         {
-            path:'/myCamp',
-            element:<PrivateRoute><MyCamp></MyCamp></PrivateRoute>
+            path:'/myCamp/:email',
+            element:<PrivateRoute><MyCamp></MyCamp></PrivateRoute>,
+            loader:({params})=> fetch(`http://localhost:5000/allDonation/${params.email}`)
+            
         },
         {
             path:'/myDonation',
