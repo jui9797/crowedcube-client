@@ -4,10 +4,11 @@ import Swal from 'sweetalert2';
 import CampCard from '../components/CampCard';
 import { Bounce } from 'react-awesome-reveal';
 
+
 const MyDonations = () => {
     const loadedData =useLoaderData()
+    console.log(loadedData)
     
-    // console.log(loadedData)
 
 
 

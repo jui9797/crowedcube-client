@@ -7,7 +7,7 @@ const Details = () => {
     const navigate =useNavigate()
     const {user} =useContext(AuthContext)
     const data = useLoaderData()
-    // console.log(data)
+    
     const currentDate = new Date()
     const formattedDate = currentDate.toISOString().split('T')[0];
 
@@ -38,7 +38,7 @@ const handleDonate =()=>{
         userEmail:user?.email,
         userName:user?.displayName
       }
-      console.log(donatedData)
+      
       fetch('http://localhost:5000/allDonation',{
         method:'POST',
         headers:{
@@ -48,7 +48,7 @@ const handleDonate =()=>{
       })
       .then(res=>res.json())
       .then(data=>{
-        console.log(data)
+        
         
       })
       navigate('/allCamp')

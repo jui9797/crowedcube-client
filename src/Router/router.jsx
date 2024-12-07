@@ -4,8 +4,8 @@ import Error from "../components/Error";
 import Home from "../Pages/Home";
 import AllCamp from "../Pages/AllCamp";
 import NewCamp from "../Pages/NewCamp";
-import MyCamp from "../Pages/MyDonations";
-import MyDonation from "../Pages/MyCampaign";
+
+
 import Register from "../components/Register";
 import Login from "../components/Login";
 import PrivateRoute from "./PrivateRoute";
@@ -13,6 +13,7 @@ import Details from "../components/Details";
 import UpdateCamp from "../components/UpdateCamp";
 import MyDonations from "../Pages/MyDonations";
 import MyCampaign from "../Pages/MyCampaign";
+
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
             loader:({params})=> fetch(`http://localhost:5000/allDonation/${params.email}`)
             
         },
+        // {
+        //     path:'/allDonation/:id',
+        //     element:<PrivateRoute><DonationCard></DonationCard></PrivateRoute>,
+        //     loader:({params})=> fetch(`http://localhost:5000/allDonation/${params.id}`)
+        // },
         {
             path:'/updateCampaign/:id',
             element:<PrivateRoute><UpdateCamp></UpdateCamp></PrivateRoute>,

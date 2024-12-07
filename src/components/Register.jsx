@@ -17,7 +17,7 @@ const Register = () => {
         const photo = form.photo.value
         const password = form.password.value
         const newUser = { name, email, photo, password }
-        console.log(newUser)
+        
 
         const regexPass =/^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
         if(!regexPass.test(password)){
@@ -33,7 +33,7 @@ const Register = () => {
         createNewUser(email, password)
             .then(result => {
                 const user = result.user
-                console.log(user)
+               
                 updateProfile(auth.currentUser, { displayName: name, photoURL: photo })
                     .then(() => {
 
@@ -46,7 +46,7 @@ const Register = () => {
 
                     })
                     .catch((err) => {
-                        console.log(err.message);
+                        
                         Swal.fire({
                           title: 'Oops..!',
                           text: err.message,
@@ -63,7 +63,7 @@ const Register = () => {
                     text: errorMessage,
                     icon: "error"
                   });
-                console.log(errorMessage)
+                
             });
     }
 

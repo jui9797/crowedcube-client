@@ -18,7 +18,7 @@ const Login = () => {
         const email = form.email.value
         const password = form.password.value
         const loginUser = { email, password }
-        console.log(loginUser)
+        
 
         userlogin(email, password)
             .then(res => {
@@ -31,15 +31,15 @@ const Login = () => {
                     icon: "success"
                   });
                   navigate(location?.state? location.state:'/')
-                console.log(user)
+                
 
             })
             .catch(err => {
-           console.log(err.message)
+          
         
         Swal.fire({
-            title: "The Internet?",
-            text: "That thing is still around?",
+            title: "Sorry",
+            text: "Invalid credential",
             icon: "error"
           });
 
@@ -51,7 +51,7 @@ const Login = () => {
     const handleGoogleLogin=()=>{
         googleLogin()
         .then(res=>{
-            console.log(res)
+            
             Swal.fire({
                 title: "Great",
                 text: "Google login successful",

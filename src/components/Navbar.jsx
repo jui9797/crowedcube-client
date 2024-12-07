@@ -5,7 +5,7 @@ import Loader from "./Loader";
 
 
 const Navbar = () => {
-    // const [isHovered, setIsHovered] = useState(false);
+    
     const { user, logOut ,loading} = useContext(AuthContext)
     
     const links = <>

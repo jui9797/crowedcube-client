@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 
 const MyCampaign = () => {
     const loadedData = useLoaderData()
+    console.log(loadedData)
     const [campData, setCampData] = useState(loadedData)
 
     const handleDelete = (_id) => {
@@ -63,7 +64,7 @@ const MyCampaign = () => {
 
                         {/* Table Body */}
                         <tbody>
-                            {campData.map((data, index) => (
+                            {campData && campData.map((data, index) => (
                                 <tr key={data._id} className="border-b-2 border-pink-900 text-xs md:text-base">
                                     <th className="px-2 py-1">{index + 1}</th>
                                     <td className="px-2 py-1">{data.title}</td>

@@ -17,7 +17,7 @@ const handleSubmit=e=>{
     const userEmail =form.userEmail.value
     const userName =form.userName.value
     const newCamp ={image, title, type, description, minDonation, deadline, userEmail, userName}
-    console.log(newCamp)
+    
 
     fetch('http://localhost:5000/newcamp',{
         method:'POST',
@@ -28,7 +28,7 @@ const handleSubmit=e=>{
     })
     .then(res => res.json())
     .then(data=>{
-        console.log(data)
+        
         
         Swal.fire({
           title: "Great.....!",
