@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 // import CampCard from '../components/CampCard';
 import { Bounce } from "react-awesome-reveal";
+import { FaSort } from "react-icons/fa6";
 
 const AllCamp = () => {
   const currentDate = new Date()
     const formattedDate = currentDate.toISOString().split('T')[0];
   const allCampData = useLoaderData()
+  const [campData, setCampData] =useState(allCampData)
+
+
+const handleSort=()=>{
+  
+  const sortedData = [...campData].sort((a, b) => b.minDonation - a.minDonation);
+  setCampData(sortedData); 
+}
+
   return (
     <div>
       <Bounce><h1 className='text-xl md:text-2xl lg:text-3xl font-bold text-center my-4'>Our Exclusive Campaigns</h1></Bounce>
+      <button onClick={handleSort} className='btn flex justify-center mb-2 bg-pink-500 text-white'>Sort <span><FaSort /></span></button>
       <div className='mb-6'>
         <div className="overflow-hidden">
           <table className="table bg-blue-200 rounded-none">
@@ -26,7 +37,7 @@ const AllCamp = () => {
             <tbody>
               {/* row 1 */}
               {
-                allCampData.map((data)=>
+                campData.map((data)=>
                   <tr key={data._id}>
                 
                 <td className='w-[300px] font-bold'>{data.title}</td>
