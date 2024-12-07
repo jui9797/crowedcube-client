@@ -11,7 +11,7 @@ import Marquee from 'react-fast-marquee';
 
 const WhyCrowed = ({isDarkTheme}) => {
     return (
-        <div  className={`my-10 bg-blue-200  w-full p-6 rounded-lg shadow-md ${
+        <div  className={`my-10 bg-blue-200  p-6 rounded-lg shadow-md ${
             isDarkTheme ? 'bg-gray-900 text-purple-700' : 'bg-gray-100 text-gray-900'
           }`}>
             <p className='text-center font-bold font-inter'><small>Services</small></p>

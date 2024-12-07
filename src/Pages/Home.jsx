@@ -16,7 +16,7 @@ const Home = () => {
 
 
     return (
-        <div className={isDarkTheme ? 'bg-gray-500 text-white' : 'bg-white text-gray-900'}>
+        <div className={isDarkTheme ? 'bg-gray-500 text-white' : 'bg-white text-gray-900 '}>
             {/* theme */}
             <div className="text-right absolute top-20 ">
                 <button
@@ -28,7 +28,7 @@ const Home = () => {
             </div>
 
             <Banner></Banner>
-            <div className='my-10 lg:my-28 w-full'>
+            <div className='my-10 lg:my-28 '>
                 <WhyCrowed isDarkTheme={isDarkTheme}></WhyCrowed>
             </div>
             <div className=' my-10 p-6'>

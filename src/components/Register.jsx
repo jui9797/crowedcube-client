@@ -74,8 +74,7 @@ const Register = () => {
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Register now!</h1>
                         <p className="py-6">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                            quasi. In deleniti eaque aut repudiandae et a id nisi.
+                        Join us today and unlock a world of possibilities! Create your account in just a few steps to start your journey with us. Stay connected, explore new opportunities, and enjoy exclusive features designed just for you.
                         </p>
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -108,10 +107,10 @@ const Register = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn bg-pink-500 text-white">Register</button>
                             </div>
                         </form>
-                        <p>  Already register ? Please<Link to='/login' className='text-red-600 font-bold'>Login</Link></p>
+                        <p className='ml-2 my-2'>  Already register ? Please<Link to='/login' className='text-pink-600 font-bold ml-2'>Login</Link></p>
                     </div>
                 </div>
             </div>

@@ -3,12 +3,14 @@ import { Link, useLoaderData } from 'react-router-dom';
 // import CampCard from '../components/CampCard';
 
 const AllCamp = () => {
+  const currentDate = new Date()
+    const formattedDate = currentDate.toISOString().split('T')[0];
   const allCampData = useLoaderData()
   return (
     <div>
       <h1 className='text-xl md:text-2xl lg:text-3xl font-bold text-center my-4'>Our Exclusive Campaigns</h1>
       <div>
-        <div className="overflow-x-auto">
+        <div className="overflow-hidden">
           <table className="table bg-blue-200">
             {/* head */}
             <thead>
@@ -26,7 +28,7 @@ const AllCamp = () => {
                   <tr key={data._id}>
                 <th>{index+1}</th>
                 <td>{data.title}</td>
-                <td>{data.deadline}</td>
+                <td>{formattedDate > data.deadline ? 'Campaigning Successful' : data.deadline}</td>
                 <td><Link to={`/${data?._id}`}><button className='btn btn-success'>See More</button></Link></td>
               </tr>
                 )

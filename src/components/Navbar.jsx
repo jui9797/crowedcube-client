@@ -17,7 +17,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="w-11/12 mx-auto bg-[#023047] text-white">
+        <div className="w-11/12 mx-auto bg-[#023047] text-white ">
             <div className="navbar ">
                 <div className="navbar-start">
                     <div className="dropdown ">

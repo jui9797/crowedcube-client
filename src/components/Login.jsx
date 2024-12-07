@@ -2,6 +2,9 @@ import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './Provider/AuthProvider';
 import Swal from 'sweetalert2'
+import Lottie from "lottie-react";
+import groovyWalkAnimation from "./groovyWalk.json"
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
     const location =useLocation()
@@ -60,13 +63,17 @@ const Login = () => {
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+                <div className="hero-content flex-col lg:flex-row">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold">Login now!</h1>
                         <p className="py-6">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                            quasi. In deleniti eaque aut repudiandae et a id nisi.
+                        Welcome back! Access your account to continue exploring endless opportunities. Enter your credentials to enjoy a seamless experience. Don,t have an account yet? Sign up today and join our community!
                         </p>
+                        {/* lottie */}
+                        <div style={{ width: 300, height: 300 }}>
+                        <Lottie animationData={groovyWalkAnimation} />
+
+                        </div>
                     </div>
                     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <form onSubmit={handleLogin} className="card-body">
@@ -86,11 +93,12 @@ const Login = () => {
 
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn bg-pink-500 text-white">Login</button>
                             </div>
                         </form>
-                        <p>  New to this website? Please<Link to='/register' className='text-red-600 font-bold'>Register</Link></p>
-                        <button onClick={handleGoogleLogin} className='btn m-4 bg-slate-400'>Sign with Google</button>
+                        <p className='ml-2'>  New to this website? Please<Link to='/register' className='text-pink-700 font-bold ml-2'>Register</Link></p>
+                        <button onClick={handleGoogleLogin} className='btn m-4 bg-slate-200 text-blue-800'><span className='text-xl'><FcGoogle /></span>
+                            Sign with Google</button>
                     </div>
                 </div>
             </div>
