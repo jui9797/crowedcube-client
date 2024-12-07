@@ -24,17 +24,17 @@ const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=> fetch('http://localhost:5000/newcamp6')
+            loader:()=> fetch('https://assignment10-server-ten.vercel.app/newcamp6')
         },
         {
             path:'/allCamp',
             element:<AllCamp></AllCamp>,
-            loader: ()=> fetch('http://localhost:5000/newcamp')
+            loader: ()=> fetch('https://assignment10-server-ten.vercel.app/newcamp')
         },
         {
             path:'/:id',
             element:<PrivateRoute><Details></Details></PrivateRoute>,
-            loader:({params})=> fetch(`http://localhost:5000/allCamp/${params.id}`)
+            loader:({params})=> fetch(`https://assignment10-server-ten.vercel.app/allCamp/${params.id}`)
         },
         {
             path:'/newCamp',
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         {
             path:'/updateCampaign/:id',
             element:<PrivateRoute><UpdateCamp></UpdateCamp></PrivateRoute>,
-            loader:({params})=> fetch(`http://localhost:5000/allCamp/${params.id}`)
+            loader:({params})=> fetch(`https://assignment10-server-ten.vercel.app/allCamp/${params.id}`)
             
         },
         {

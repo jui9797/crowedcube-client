@@ -13,7 +13,7 @@ const MyDonations = () => {
     useEffect(() => {
       const fetchData = async () => {
 
-          const response = await fetch(`http://localhost:5000/allDonationData?email=${user.email}`);
+          const response = await fetch(`https://assignment10-server-ten.vercel.app/allDonationData?email=${user.email}`);
           const result = await response.json();
           setDonation(result);
           

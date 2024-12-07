@@ -19,7 +19,7 @@ const handleSubmit=e=>{
     const newCamp ={image, title, type, description, minDonation, deadline, userEmail, userName}
     
 
-    fetch('http://localhost:5000/newcamp',{
+    fetch('https://assignment10-server-ten.vercel.app/newcamp',{
         method:'POST',
         headers: {
             'content-type' : 'application/json'

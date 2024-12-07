@@ -25,7 +25,7 @@ const handleUpdate=e=>{
     const updatedCamp ={image, title, type, description, minDonation, deadline, userEmail, userName}
     
 
-    fetch(`http://localhost:5000/allCamp/${_id}`, {
+    fetch(`https://assignment10-server-ten.vercel.app/allCamp/${_id}`, {
         method:'PUT',
         headers:{
             'content-type':'application/json'

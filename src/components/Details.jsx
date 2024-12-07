@@ -39,7 +39,7 @@ const handleDonate =()=>{
         userName:user?.displayName
       }
       
-      fetch('http://localhost:5000/allDonation',{
+      fetch('https://assignment10-server-ten.vercel.app/allDonation',{
         method:'POST',
         headers:{
             'content-type' : 'application/json'

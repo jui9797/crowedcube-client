@@ -15,7 +15,7 @@ const MyCampaign = () => {
     useEffect(() => {
         const fetchData = async () => {
 
-            const response = await fetch(`http://localhost:5000/myCampaign?email=${user.email}`);
+            const response = await fetch(`https://assignment10-server-ten.vercel.app/myCampaign?email=${user.email}`);
             const result = await response.json();
             setCampData(result);
             
@@ -37,7 +37,7 @@ const MyCampaign = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/allCamp/${_id}`, {
+                fetch(`https://assignment10-server-ten.vercel.app/allCamp/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
