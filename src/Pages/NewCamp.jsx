@@ -39,7 +39,7 @@ const handleSubmit=e=>{
 }
 
     return (
-        <div className="max-w-lg mx-auto bg-white p-6 shadow-md rounded-md">
+        <div className="max-w-lg mx-auto  p-6 shadow-md rounded-md bg-pink-200 my-6">
           <h1 className="text-2xl font-bold text-gray-700 mb-6">Add New Campaign</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Image URL */}
@@ -158,7 +158,7 @@ const handleSubmit=e=>{
             <div>
               <button
                 type="submit"
-                className="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700"
+                className="w-full px-4 py-2 bg-pink-500 text-white font-semibold rounded-md shadow hover:bg-pink-700"
               >
                 Add
               </button>
