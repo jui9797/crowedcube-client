@@ -1,6 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "./Provider/AuthProvider";
+import Loader from "./Loader";
 
 
 const Navbar = () => {
@@ -51,7 +52,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                 {loading ? (
                         <div className="flex items-center">
-                            <p className="text-xl font-bold">Loading...</p>
+                            <Loader></Loader>
                         </div>
                     ) : user ? (
                         <>

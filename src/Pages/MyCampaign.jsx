@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Bounce } from 'react-awesome-reveal';
 import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -45,7 +46,7 @@ const MyCampaign = () => {
 
     return (
         <div>
-            <h2 className='text-3xl md:text-5xl text-center my-10'>My Campaigns</h2>
+            <Bounce><h2 className='text-3xl md:text-5xl text-center my-10'>My Campaigns</h2></Bounce>
             <div>
                 <div className="overflow-x-auto max-w-full">
                     <table className="table table-auto bg-pink-100 rounded-none border-2 border-pink-900 my-10">
