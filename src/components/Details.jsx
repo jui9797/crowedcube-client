@@ -8,9 +8,20 @@ const Details = () => {
     const {user} =useContext(AuthContext)
     const data = useLoaderData()
     // console.log(data)
+    const currentDate = new Date()
+    const formattedDate = currentDate.toISOString().split('T')[0];
 
 const handleDonate =()=>{
-    console.log('donate successful')
+    if(data.deadline < formattedDate){
+        return(
+            Swal.fire({
+                title: 'Sorry this Campaign has completed',
+                text: "donate other campaign",
+                
+                icon: "error"
+              }) 
+        )
+    }
     Swal.fire({
         title: `Congrates ${user?.displayName}`,
         text: "Donation process is successful",
