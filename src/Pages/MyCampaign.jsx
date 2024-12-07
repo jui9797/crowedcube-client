@@ -70,7 +70,7 @@ const MyCampaign = () => {
                                     <td className="px-2 py-1">${data.minDonation}</td>
                                     <td className="px-2 py-1">{data.deadline}</td>
                                     <td className="flex flex-wrap gap-2 px-2 py-1">
-                                        <Link to={`/updateCampaign`}>
+                                        <Link to={`/updateCampaign/${data._id}`}>
                                             <button className="btn bg-[#023047] text-white hover:text-[#023047] hover:bg-white hover:border-[#023047] p-1 text-sm md:p-2">
                                                 Update
                                             </button>
