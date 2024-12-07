@@ -42,16 +42,12 @@ const router = createBrowserRouter([
         },
         
         {
-            path:'/myDonation/:email',
+            path:'/myDonation',
             element:<PrivateRoute><MyDonations></MyDonations></PrivateRoute>,
-            loader:({params})=> fetch(`http://localhost:5000/allDonation/${params.email}`)
+           
             
         },
-        // {
-        //     path:'/allDonation/:id',
-        //     element:<PrivateRoute><DonationCard></DonationCard></PrivateRoute>,
-        //     loader:({params})=> fetch(`http://localhost:5000/allDonation/${params.id}`)
-        // },
+        
         {
             path:'/updateCampaign/:id',
             element:<PrivateRoute><UpdateCamp></UpdateCamp></PrivateRoute>,
@@ -59,9 +55,9 @@ const router = createBrowserRouter([
             
         },
         {
-            path:'/myCamp/:email',
+            path:'/myCamp',
             element:<PrivateRoute><MyCampaign></MyCampaign></PrivateRoute>,
-            loader:({params})=> fetch(`http://localhost:5000/myCampaign/${params.email}`)
+            
         },
         {
             path:'/login',

@@ -1,15 +1,29 @@
 
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Bounce } from 'react-awesome-reveal';
 import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../components/Provider/AuthProvider';
 
 
 
 const MyCampaign = () => {
-    const loadedData = useLoaderData()
-    console.log(loadedData)
-    const [campData, setCampData] = useState(loadedData)
+    const {user} =useContext(AuthContext)
+    
+    const [campData, setCampData] = useState([])
+  
+    useEffect(() => {
+        const fetchData = async () => {
+
+            const response = await fetch(`http://localhost:5000/myCampaign?email=${user.email}`);
+            const result = await response.json();
+            setCampData(result);
+            
+
+        };
+
+        fetchData();
+    }, [user?.email]);
 
     const handleDelete = (_id) => {
 
