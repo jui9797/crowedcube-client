@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from './Provider/AuthProvider';
 import auth from './Firebase/firebase.config';
 import { updateProfile } from "firebase/auth";
 import Swal from 'sweetalert2'
 
 const Register = () => {
-
+   const navigate =useNavigate()
     const { createNewUser, setUser } = useContext(AuthContext)
 
     const handleRegister = e => {
@@ -43,6 +43,7 @@ const Register = () => {
                             text: "Register successful",
                             icon: "success"
                           });
+                          navigate('/')
 
                     })
                     .catch((err) => {

@@ -1,9 +1,13 @@
 import React from 'react';
+import { FaFacebook } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
     return (
         <div className='w-11/12 mx-auto'>
-            <footer className="footer text-white bg-[#023047] p-10">
+            <footer className="footer text-white bg-[#023047] p-4 lg:p-10">
   <nav>
     <h6 className="footer-title">Services</h6>
     <a className="link link-hover">Branding</a>
@@ -12,11 +16,11 @@ const Footer = () => {
     <a className="link link-hover">Advertisement</a>
   </nav>
   <nav>
-    <h6 className="footer-title">Company</h6>
-    <a className="link link-hover">About us</a>
-    <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
-    <a className="link link-hover">Press kit</a>
+    <h6 className="footer-title">Social</h6>
+    <a className="link link-hover text-md lg:text-2xl"><FaFacebook /></a>
+    <a className="link link-hover text-md lg:text-2xl"><FaGoogle /></a>
+    <a className="link link-hover text-md lg:text-2xl"><FaGithub /></a>
+    <a className="link link-hover text-md lg:text-2xl"><FaTwitter /></a>
   </nav>
   <nav>
     <h6 className="footer-title">Legal</h6>
@@ -28,13 +32,13 @@ const Footer = () => {
     <h6 className="footer-title">Newsletter</h6>
     <fieldset className="form-control w-80">
       <label className="label">
-        <span className="label-text">Enter your email address</span>
+        <span className="label-text text-white">Enter your email address</span>
       </label>
       <div className="join border-none">
         <input
           type="text"
           placeholder="username@site.com"
-          className="input input-bordered join-item" />
+          className="input input-bordered join-item " />
         <button className="btn bg-pink-500 join-item border-none text-white">Subscribe</button>
       </div>
     </fieldset>
