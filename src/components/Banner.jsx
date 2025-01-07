@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
-        <div className='mt-10 lg:mt-20 h-[250px] lg:h-[500px]'>
+        <div className='mt-10 lg:mt-16 h-[250px] lg:h-[500px]'>
             <div className="carousel w-full h-full"style={{
                     backgroundImage: `url('https://i.ibb.co.com/HDWJgtb/banner-fund.png')`,
                     backgroundPosition:'center',
