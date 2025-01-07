@@ -17,18 +17,22 @@ const Footer = () => {
   </nav>
   <nav>
     <h6 className="footer-title">Social</h6>
-    <a className="link link-hover text-md lg:text-2xl"><FaFacebook /></a>
-    <a className="link link-hover text-md lg:text-2xl"><FaGoogle /></a>
-    <a className="link link-hover text-md lg:text-2xl"><FaGithub /></a>
-    <a className="link link-hover text-md lg:text-2xl"><FaTwitter /></a>
+    <a href="https://www.facebook.com/profile.php?id=100055737878584" className="link link-hover text-md lg:text-2xl"><FaFacebook /></a>
+    <a href='https://workspace.google.com/products/docs' className="link link-hover text-md lg:text-2xl"><FaGoogle /></a>
+    <a href="https://github.com/jui9797" className="link link-hover text-md lg:text-2xl"><FaGithub /></a>
+    
   </nav>
   <nav>
-    <h6 className="footer-title">Legal</h6>
-    <a className="link link-hover">Refund policy</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
+    <h6 className="footer-title">Menu</h6>
+    <a href='/allCamp' className="link link-hover">All Campaign</a>
+    <a href='/about' className="link link-hover">About Us</a>
+    <a href='/myDonation' className="link link-hover">Donation</a>
   </nav>
-  <form>
+  <div>
+  <h2 className='font-bold text-2xl'>CrowedCube</h2>
+  <p>© 2025 CrowdCube. Empowering ideas, one campaign at a time.</p>
+  </div>
+  {/* <form>
     <h6 className="footer-title">Newsletter</h6>
     <fieldset className="form-control w-80">
       <label className="label">
@@ -42,7 +46,7 @@ const Footer = () => {
         <button className="btn bg-pink-500 join-item border-none text-white">Subscribe</button>
       </div>
     </fieldset>
-  </form>
+  </form> */}
 </footer>
         </div>
     );

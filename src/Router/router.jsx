@@ -13,6 +13,7 @@ import Details from "../components/Details";
 import UpdateCamp from "../components/UpdateCamp";
 import MyDonations from "../Pages/MyDonations";
 import MyCampaign from "../Pages/MyCampaign";
+import AboutUs from "../Pages/AboutUs";
 
 
 const router = createBrowserRouter([
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
         },
         {
             path:'/:id',
-            element:<PrivateRoute><Details></Details></PrivateRoute>,
+            element:<Details></Details>,
             loader:({params})=> fetch(`https://assignment10-server-ten.vercel.app/allCamp/${params.id}`)
         },
         {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
         {
             path:'/register',
             element:<Register></Register>
+        },
+        {
+            path:'/about',
+            element:<AboutUs></AboutUs>
         }
       ]
     },

@@ -39,7 +39,7 @@ const handleSubmit=e=>{
 }
 
     return (
-        <div className="max-w-lg mx-auto  p-6 shadow-md rounded-md bg-pink-200 my-6">
+        <div className="max-w-lg mx-auto  p-6 shadow-md rounded-md bg-pink-200 my-6 mt-20">
           <h1 className="text-2xl font-bold text-gray-700 mb-6">Add New Campaign</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Image URL */}

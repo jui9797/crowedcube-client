@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Banner = () => {
     return (
-        <div className=' h-[250px] lg:h-[500px]'>
+        <div className='mt-10 lg:mt-20 h-[250px] lg:h-[500px]'>
             <div className="carousel w-full h-full"style={{
                     backgroundImage: `url('https://i.ibb.co.com/HDWJgtb/banner-fund.png')`,
                     backgroundPosition:'center',
@@ -27,7 +27,7 @@ const Banner = () => {
                     backgroundSize:'cover'
                 }}>
                     <div className='text-white text-center'>
-                        <h1 className='text-2xl lg:text-5xl font-rubik font-semibold mb-4'>Dreams grow bigger when shared.</h1>
+                        <h1 className='text-2xl lg:text-5xl font-rubik font-semibold pt-8 mb-4'>Dreams grow bigger when shared.</h1>
                         <h1 className='text-xs lg:text-xl font-rubik font-thin mb-4 w-2/3  mx-auto'>Every dream starts with a single step, and your support can make that step possible. Together, we can turn ideas into impactful realities. Join the movement today!</h1>
                         <button className='btn bg-pink-600 font-inter text-white border-none font-bold hover:bg-blue-950 mr-4'><Link to='/allCamp'>Explore More</Link></button>
                         
@@ -41,7 +41,7 @@ const Banner = () => {
                 }}>
                     <div className='bg-black bg-opacity-50 h-full'>
                     <div className='text-white   md:w-1/2 lg:mt-20 pl-4'>
-                        <h1 className='text-2xl lg:text-5xl font-rubik font-semibold mb-4'>Community-driven change starts here.</h1>
+                        <h1 className='text-2xl lg:text-5xl font-rubik font-semibold pt-8 mb-4'>Community-driven change starts here.</h1>
                         <h1 className='text-xs  font-rubik font-thin mb-4 w-2/3  '>Every dream starts with a single step, and your support can make that step possible. Together, we can turn ideas into impactful realities. Join the movement today!</h1>
                         <button className='btn bg-white font-inter text-pink-800 border-none font-bold hover:bg-indigo-900 hover:text-white hover:border-2 mr-4'><Link to='/allCamp'>Explore More</Link></button>
                         

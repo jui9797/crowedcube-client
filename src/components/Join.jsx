@@ -1,7 +1,9 @@
 import React from 'react';
-import joinimg from '../assets/joining1.jpg.webp';
+// import lottieImg from '../assets/lottie/Animation - 1736184897677.json'
 import { FaLongArrowAltRight } from "react-icons/fa";
 import 'animate.css';
+import joinImg from '../assets/Add User-bro.png'
+// import Lottie from 'lottie-react';
 
 const Join = ({isDarkTheme}) => {
     return (
@@ -29,7 +31,9 @@ const Join = ({isDarkTheme}) => {
                 </div>
             </div>
             <div className="lg:w-1/2">
-                <img className="w-full h-[200px] lg:h-[350px]" src={joinimg} alt="Join Us" />
+            {/* <Lottie animationData={lottieImg}></Lottie> */}
+                <img className="w-full h-[200px] lg:h-[350px]" src={joinImg} alt="Join Us" />
+
             </div>
         </div>
     );

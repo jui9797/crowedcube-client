@@ -7,6 +7,8 @@ import WhyCrowed from '../components/WhyCrowed';
 import { useState } from 'react';
 import { MdLightMode } from "react-icons/md";
 import { MdDarkMode } from "react-icons/md";
+import Newsletter from '../components/Newsletter';
+
 
 const Home = () => {
     const loadedData = useLoaderData()
@@ -33,7 +35,7 @@ const Home = () => {
             </div>
             <div className=' my-10 p-6'>
                 <h1 className='text-xl md:text-2xl lg:text-4xl font-bold text-center my-4 lg:my-8 font-rubik'>Our Running Campaigns</h1>
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
                     {
                         loadedData.map(data => <CampCard key={data._id} data={data} isDarkTheme={isDarkTheme}></CampCard>)
 
@@ -42,6 +44,7 @@ const Home = () => {
             </div>
             <div className='p-10 lg:p-20'>
                 <Join isDarkTheme={isDarkTheme}></Join>
+               <Newsletter></Newsletter>
             </div>
         </div>
     );

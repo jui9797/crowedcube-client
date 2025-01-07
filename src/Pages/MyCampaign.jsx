@@ -42,7 +42,7 @@ const MyCampaign = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-
+                        console.log(data)
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
@@ -60,7 +60,7 @@ const MyCampaign = () => {
 
 
     return (
-        <div>
+        <div className='mt-20'>
             <Bounce><h2 className='text-3xl md:text-5xl text-center my-10'>My Campaigns</h2></Bounce>
             <div>
                 <div className="overflow-x-auto max-w-full">

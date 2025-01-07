@@ -55,7 +55,7 @@ const handleDonate =()=>{
 }
 
     return (
-        <div>
+        <div className='mt-20'>
             <div className="hero bg-blue-100 min-h-screen">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img
