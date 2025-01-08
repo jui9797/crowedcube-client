@@ -71,34 +71,42 @@ A crowdfunding website is a platform where people can raise money for different 
    ```bash
    git clone https://github.com/your-username/crowdcube-client.git
    cd crowdcube-client
-2. install dependencies:
+<ol>
+  <li>Install dependencies:</li>
+  <ul>
+    <li><code>npm install</code></li>
+  </ul>
+  <li>Start server:</li>
+  <ul>
+    <li><code>npm start</code></li>
+  </ul>
+  <li>The frontend will run on <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> by default.</li>
+</ol>
 
-   - npm install
-
-3. start server:
-
- - npm start
-
-4. The frontend will run on http://localhost:3000 by default.
 
 # Backend
 1. Clone the repository:
 - git clone https://github.com/your-username/crowdcube-server.git
 cd crowdcube-server
 
-2. Install dependencies:
-- npm install
-
-3. Create a .env file in the root directory and add the following:
-- PORT=5000
+<ol>
+  <li>Install dependencies:</li>
+  <ul>
+    <li><code>npm install</code></li>
+  </ul>
+  <li>Create a <code>.env</code> file in the root directory and add the following:</li>
+  <pre>
+PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
+  </pre>
+  <li>Start the server:</li>
+  <ul>
+    <li><code>npm run start</code></li>
+  </ul>
+  <li>The backend will run on <a href="http://localhost:5000" target="_blank">http://localhost:5000</a> by default.</li>
+</ol>
 
-
-4. Start the server:
-- npm run start
-
-5. The backend will run on http://localhost:5000 by default.
 
 ### live (https://assignment-10-client-3687c.web.app)
 
